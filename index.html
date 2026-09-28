@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#030405">
+<meta name="description" content="VOID. A small atmospheric puzzle-platformer about time, memory, and the subject between them.">
+<title>PROJECT-VOID</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23030405' d='M0 0h32v32H0z'/%3E%3Cpath fill='none' stroke='%23d9e0e4' stroke-width='2' d='M9 26V6h14v20M13 26h6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script defer src="core.js"></script><script defer src="game.js"></script>
+</head>
+<body>
+<main id="app" aria-label="VOID game">
+ <canvas id="world" aria-label="Game world. Move with A and D or arrow keys, jump with Space, manipulate time with E." tabindex="-1"></canvas>
+ <div id="crt" aria-hidden="true"></div>
+ <section id="menu" class="screen" hidden>
+  <div class="menu-top"><span>DEEP SPACE RESEARCH DIVISION</span><span>TERMINAL 001</span></div>
+  <div class="menu-main"><div id="boot-title" class="project-name"></div><h1 id="void-title">VOID</h1><p class="menu-tagline">THERE IS NO CURRENT MOMENT.</p>
+   <nav id="menu-nav" aria-label="Main menu" hidden><button data-action="play">PLAY<span>01</span></button><button data-action="archive">ARCHIVE<span>02</span></button><button data-action="settings">SETTINGS<span>03</span></button><button data-action="credits">CREDITS<span>04</span></button></nav>
+  </div>
+  <div class="menu-bottom"><span><i></i> A SIGNAL IN THE SILENCE</span><span>EST. ARRIVAL <b>147 YEARS</b></span></div>
+ </section>
+ <section id="panel" class="screen panel-screen" hidden aria-label="Menu panel"><div class="panel-content"><div class="panel-code">PROJECT-VOID / TERMINAL ACCESS</div><h2 id="panel-title"></h2><div id="panel-body"></div><button id="panel-back" class="back">← BACK</button></div></section>
+ <section id="terminal" class="screen terminal-screen" hidden><div id="terminal-text" role="status" aria-live="polite"></div><button id="skip-intro" hidden>HOLD SPACE TO SKIP</button></section>
+ <div id="hud" hidden><div class="hud-top"><div><strong>VOID</strong><small><i></i> SYSTEM ACTIVE</small></div><div class="level-label"><span id="level-number">LEVEL 01 / 05</span><small id="level-name">GROWTH</small></div><button id="pause" aria-label="Pause game">ESC <span>MENU</span></button></div><div class="hud-bottom"><span id="control-help">A D / ← → &nbsp; MOVE &nbsp;&nbsp; SPACE &nbsp; JUMP &nbsp;&nbsp; E &nbsp; TIME</span><span id="attempt">SESSION 0001</span></div></div>
+ <div id="dialogue" role="status" aria-live="polite"></div>
+ <section id="module" hidden aria-label="T-MODULE time control"><div class="module-head"><strong>T-MODULE</strong><span id="module-state">STANDBY</span></div><div class="module-readout"><div><small>TARGET</small><span id="target-name">TREE</span></div><div><small id="age-label">AGE</small><span id="target-age">084 YEARS</span></div></div><div id="time-controls" hidden><div class="scale-label"><span>PAST</span><span>FUTURE</span></div><input id="timeline" type="range" min="0" max="5" step="1" value="3" aria-label="Temporal state"><div id="time-states"></div></div><button id="module-toggle">[E] MANIPULATE</button><p id="module-help" hidden>← → TIME &nbsp;·&nbsp; A D MOVE &nbsp;·&nbsp; E RELEASE</p></section>
+ <div id="touch-controls" hidden aria-label="Touch controls"><div><button data-key="left" aria-label="Move left">LEFT</button><button data-key="right" aria-label="Move right">RIGHT</button></div><div><button data-key="jump" aria-label="Jump">JUMP</button><button data-key="time" aria-label="Manipulate time">TIME</button></div></div>
+ <div id="failure" hidden><span>TEMPORAL FAILURE</span><small>RETRY</small></div>
+ <noscript>PROJECT-VOID REQUIRES JAVASCRIPT.</noscript>
+</main>
+</body>
+</html>
